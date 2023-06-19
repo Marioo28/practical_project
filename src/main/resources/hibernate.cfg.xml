@@ -1,0 +1,33 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+
+        <!-- host -->
+        <!-- 1.calea catre driver: jdbc:mysql://
+            2. adresa resurse(local, ip, cloud, etc): localhost sau 127.0.0.1
+            3. port( nr la care putem identifica resursa) : 3306
+            4. schema(baza de date) : sda-cinema -->
+        <property name="connection.url">jdbc:mysql://localhost:3306/online-store</property>
+
+        <!-- user -->
+        <!-- Go to MySql workbench -> Administration -> Users and Privileges -> see all users -->
+        <property name="connection.username">sdauserapp</property>
+
+        <!-- password -->
+        <property name="connection.password">sdauserapp</property>
+
+        <!-- driver -->
+        <!-- Daca nu va amintiti path-ul:
+        1. google it
+        2. external Libraries -> com.mysql:mysql-connector-j -> open jar -> com.mysql.cj.jdbc.Driver -->
+        <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+
+        <!--  Daca tabelele nu exista, vor fi create pe baza claselor de tipul entitate: tables(implemented), schemas(not implemented yet) -->
+        <!-- All tables have to be created by Hibernate at application startup -->
+        <property name="hbm2ddl.auto">create</property>
+
+    </session-factory>
+</hibernate-configuration>
